@@ -7,6 +7,7 @@ environment:
   sdk: '>=3.3.4 <4.0.0'
 
 dependencies:
+  flutter_compass: '^0.8.0'
   flutter:
     sdk: flutter
 
