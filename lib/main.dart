@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_compass/flutter_compass.dart';
@@ -56,7 +57,19 @@ class _CompassState extends State<Compass> {
         title: const Text('Compass Example'),
       ),
       body: Center(
-        child: Text('Current Direction: ${_direction?.toStringAsFixed(2)}°'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Transform.rotate(
+              angle: -_direction! * pi / 180,
+              child: Icon(
+                Icons.arrow_upward_rounded,
+                size: 100,
+              ),
+            ),
+            Text('Current Direction: ${_direction?.toStringAsFixed(2)}°'),
+          ],
+        ),
       ),
     );
   }
